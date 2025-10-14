@@ -31,5 +31,5 @@ test("3) Se detiene en 0", () => {
 
   fireEvent.click(screen.getByRole("button", { name: /🚀 iniciar/i }));
   act(() => jest.advanceTimersByTime(3000));
-  expect(screen.getByText(/¡tiempo terminadoo!/i)).toBeInTheDocument();
+  expect(screen.getByText(/¡tiempo terminado!/i)).toBeInTheDocument();
 });

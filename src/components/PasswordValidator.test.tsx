@@ -24,7 +24,7 @@ describe("PasswordValidator Component", () => {
 
   test("detecta cuando solo algunas reglas se cumplen", () => {
     render(<PasswordValidator />);
-    const input = screen.getByPlaceholderText("Escriba su nombre");
+    const input = screen.getByPlaceholderText("Escriba su contraseña");
 
     fireEvent.change(input, { target: { value: "password123" } });
 

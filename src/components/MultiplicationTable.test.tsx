@@ -12,7 +12,7 @@ describe("MultiplicationTable", () => {
     const button = screen.getByRole("button", { name: /Generar/i });
 
     // 3. Simular escribir el número 5 en el input
-    fireEvent.change(input, { target: { value: "5" } });
+    fireEvent.change(input, { target: { value: "30" } });
 
     // 4. Hacer clic en el botón "Generar"
     fireEvent.click(button);

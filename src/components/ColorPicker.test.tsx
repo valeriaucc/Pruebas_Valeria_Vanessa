@@ -2,7 +2,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import ColorPicker from "./ColorPicker";
 
-test("1) El color inicial es blanco", () => {
+test("1) El color inicial es verde", () => {
   render(<ColorPicker />);
   const box = screen.getByTestId("color-box"); // CORREGIDO
   expect(box).toHaveStyle("background-color: #ffffff");

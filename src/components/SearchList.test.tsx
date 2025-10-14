@@ -20,6 +20,6 @@ test("2) Filtra los nombres al escribir en el input", () => {
 test("3) Muestra 'No encontrado' si no hay coincidencias", () => {
   render(<SearchList />);
   const input = screen.getByPlaceholderText(/escribe un nombre/i); // CORREGIDO
-  fireEvent.change(input, { target: { value: "Pedro" } });
+  fireEvent.change(input, { target: { value: "zzz" } });
   expect(screen.getByText(/no encontrado/i)).toBeInTheDocument();
 });

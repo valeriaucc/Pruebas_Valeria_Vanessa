@@ -11,7 +11,7 @@ test("Muestra la hora y se actualiza con el tiempo simulado", () => {
   const initialTime = screen.getByTestId("clock-time").textContent;
 
   act(() => {
-    jest.advanceTimersByTime(2000);
+    jest.advanceTimersByTime(3000);
   });
 
   const updatedTime = screen.getByTestId("clock-time").textContent;

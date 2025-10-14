@@ -1,53 +1,43 @@
-// src/views/LayoutsView.tsx
+import { Link, Outlet } from "react-router-dom";
 
-export default function LayoutsView() {
+export default function Layout() {
   return (
-    <div className="space-y-8">
-      {/* A) Container básico */}
-      <section className="bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-        <div className="container mx-auto px-4 py-6">
-          <h2 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100">
-            Container básico
-          </h2>
-          <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Usa <code>container mx-auto px-4</code> para crear secciones centradas
-            con padding lateral responsivo.
-          </p>
-        </div>
-      </section>
+    <div className="flex h-screen bg-slate-50 dark:bg-slate-900">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 p-4">
+        <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+          🚀 JTest
+        </h1>
+        <nav>
+          <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+            {/* Vistas antiguas */}
+            <li><Link to="/" className="hover:text-indigo-500">🏠 Home</Link></li>
+            <li><Link to="/tablasmul" className="hover:text-indigo-500">✖️ Tablas de Multiplicar</Link></li>
+            <li><Link to="/conversorunid" className="hover:text-indigo-500">🔄 Conversor de Unidades</Link></li>
+            <li><Link to="/validcontrasena" className="hover:text-indigo-500">🔑 Validar Contraseña</Link></li>
+            <li><Link to="/contadorclics" className="hover:text-indigo-500">🖱️ Contador de Clics</Link></li>
+            <li><Link to="/listareas" className="hover:text-indigo-500">📝 Lista de Tareas</Link></li>
 
-      {/* B) MaxWidth para textos */}
-      <section className="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
-        <div className="max-w-prose md:max-w-3xl mx-auto">
-          <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
-            MaxWidth para textos
-          </h3>
-          <p className="mt-2 text-slate-700 dark:text-slate-200 leading-relaxed">
-            Controla el ancho máximo del bloque de texto con <code>max-w-prose</code> 
-            o <code>max-w-3xl</code> y centra con <code>mx-auto</code>. Esto mejora la 
-            legibilidad en pantallas grandes.
-          </p>
-        </div>
-      </section>
+            {/* Nuevos ejercicios */}
+            <li><Link to="/clock" className="hover:text-indigo-500">🕒 Reloj Digital</Link></li>
+            <li><Link to="/timer" className="hover:text-indigo-500">⏳ Contador Regresivo</Link></li>
+            <li><Link to="/colors" className="hover:text-indigo-500">🎨 Selector de Colores</Link></li>
+            <li><Link to="/search" className="hover:text-indigo-500">🔍 Buscador</Link></li>
 
-      {/* C) Grilla centrada dentro de un container */}
-      <section className="rounded-xl border border-slate-200 dark:border-slate-800">
-        <div className="container mx-auto px-4 py-6">
-          <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">
-            Grid dentro de container
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm"
-              >
-                Card {i + 1}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            {/* Extras */}
+            <li><Link to="/three" className="hover:text-indigo-500">🌐 Three.js Demo</Link></li>
+            <li><Link to="/three_2" className="hover:text-indigo-500">📐 Geometry Explorer</Link></li>
+            <li><Link to="/tts" className="hover:text-indigo-500">🗣️ Text-to-Speech</Link></li>
+            <li><Link to="/settings" className="hover:text-indigo-500">⚙️ Settings</Link></li>
+            <li><Link to="/layouts" className="hover:text-indigo-500">📦 Layouts</Link></li>
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Contenido principal */}
+      <main className="flex-1 p-6 overflow-y-auto">
+        <Outlet />
+      </main>
     </div>
   );
 }

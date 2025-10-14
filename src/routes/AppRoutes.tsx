@@ -14,21 +14,36 @@ import ValidContrasena from "../views/ValidContrasena";
 import ContadorClics from "../views/ContadorClics";
 import ListaTareas from "../views/ListaTareas";
 
+// ✅ Nuevos Ejercicios
+import DigitalClockView from "../views/DigitalClockView";
+import CountdownTimerView from "../views/CountdownTimerView";
+import ColorPickerView from "../views/ColorPickerView";
+import SearchListView from "../views/SearchListView";
+
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        {/* Menú Principal */}
         <Route index element={<HomePage />} />
         <Route path="three" element={<ThreeDemoView />} />
         <Route path="layouts" element={<LayoutsView />} />
         <Route path="tts" element={<SpeechDemoView />} />
         <Route path="three_2" element={<GeometryExplorer />} />
         <Route path="settings" element={<SettingsView />} />
+
+        {/* Ejercicios existentes */}
         <Route path="tablasmul" element={<TablasMul />} />
         <Route path="conversorunid" element={<ConversorUnid />} />
         <Route path="validcontrasena" element={<ValidContrasena />} />
         <Route path="contadorclics" element={<ContadorClics />} />
         <Route path="listareas" element={<ListaTareas />} />
+
+        {/* ✅ Nuevos Ejercicios */}
+        <Route path="relojdigital" element={<DigitalClockView />} />
+        <Route path="contadorregresivo" element={<CountdownTimerView />} />
+        <Route path="selectorcolores" element={<ColorPickerView />} />
+        <Route path="buscadorlista" element={<SearchListView />} />
       </Route>
     </Routes>
   );

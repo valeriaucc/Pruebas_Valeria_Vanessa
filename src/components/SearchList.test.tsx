@@ -12,7 +12,7 @@ test("1) Muestra la lista inicial con todos los elementos", () => {
 test("2) Filtra los nombres al escribir en el input", () => {
   render(<SearchList />);
   const input = screen.getByPlaceholderText(/escribe un nombre/i); // CORREGIDO
-  fireEvent.change(input, { target: { value: "Melissa" } });
+  fireEvent.change(input, { target: { value: "Pedro" } });
   expect(screen.getByText(/pedro/i)).toBeInTheDocument();
   expect(screen.queryByText(/ana/i)).not.toBeInTheDocument();
 });

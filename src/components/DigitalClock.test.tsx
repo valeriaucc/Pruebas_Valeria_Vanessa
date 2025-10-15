@@ -15,5 +15,5 @@ test("Muestra la hora y se actualiza con el tiempo simulado", () => {
   });
 
   const updatedTime = screen.getByTestId("clock-time").textContent;
-  expect(updatedTime).not.toBe(initialTimeeeee);
+  expect(updatedTime).not.toBe(initialTime);
 });

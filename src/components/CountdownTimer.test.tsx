@@ -29,7 +29,7 @@ test("3) Se detiene en 0", () => {
   const input = screen.getByLabelText(/segundos/i);
   fireEvent.change(input, { target: { value: "2" } });
 
-  fireEvent.click(screen.getByRole("button", { name: /🚀 iniciar/i }));
+  fireEvent.click(screen.getByRole("button", { name: /🚀 eliminar/i }));
   act(() => jest.advanceTimersByTime(3000));
   expect(screen.getByText(/¡tiempo terminado!/i)).toBeInTheDocument();
 });

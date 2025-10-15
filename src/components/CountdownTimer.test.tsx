@@ -26,7 +26,7 @@ test("2) Disminuye en intervalos de un segundo", () => {
 
 test("3) Se detiene en 0", () => {
   render(<CountdownTimer />);
-  const input = screen.getByLabelText(/horasss/i);
+  const input = screen.getByLabelText(/segundos/i);
   fireEvent.change(input, { target: { value: "2" } });
 
   fireEvent.click(screen.getByRole("button", { name: /🚀 iniciar/i }));

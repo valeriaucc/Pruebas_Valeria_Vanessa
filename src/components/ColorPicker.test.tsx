@@ -9,7 +9,7 @@ test("1) El color inicial es verde", () => {
 });
 
 test("2) Cambia el color al seleccionar uno nuevo", () => {
-  render(<ColorPickerrrrrr />);
+  render(<ColorPicker />);
   const input = screen.getByLabelText(/seleccionar color/i);
   fireEvent.change(input, { target: { value: "#00ff00" } });
   const box = screen.getByTestId("color-box");

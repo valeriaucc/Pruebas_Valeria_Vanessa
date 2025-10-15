@@ -26,10 +26,10 @@ test("2) Disminuye en intervalos de un segundo", () => {
 
 test("3) Se detiene en 0", () => {
   render(<CountdownTimer />);
-  const input = screen.getByLabelText(/segundos/i);
+  const input = screen.getByLabelText(/horas/i);
   fireEvent.change(input, { target: { value: "2" } });
 
-  fireEvent.click(screen.getByRole("button", { name: /🚀 eliminar/i }));
+  fireEvent.click(screen.getByRole("button", { name: /🚀 iniciar/i }));
   act(() => jest.advanceTimersByTime(3000));
   expect(screen.getByText(/¡tiempo terminado!/i)).toBeInTheDocument();
 });
